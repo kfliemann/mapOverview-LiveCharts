@@ -1,0 +1,30 @@
+﻿<Window x:Class="mapOverview.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:mapOverview"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        Title="CoronaDisplayer" Height="1020" Width="1080">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="AliceBlue">
+            <Label HorizontalAlignment="Center" FontSize="20">COVID-19-Fälle der letzten 7 Tage / 100.000 Einwohner</Label>
+        </Grid>
+        <Grid x:Name="gridGeoMap" Grid.Row="1">
+            <Popup Name="MyPopup" Placement="MousePoint" HorizontalOffset="-1" VerticalOffset="-1">
+                <StackPanel Background="LightBlue">
+                    <TextBlock x:Name="districtNamePop" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name="districtInfo"></TextBlock>
+                    <Button Click="Hide_Click" Margin="10">Schließen</Button>
+                </StackPanel>
+            </Popup>
+        </Grid>
+    </Grid>
+
+
+</Window>
